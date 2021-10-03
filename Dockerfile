@@ -1,10 +1,9 @@
-FROM node:16.8.0-alpine3.12
+FROM ruby:2.7
 
 WORKDIR /usr/src/app/
 
-COPY src/ /usr/src/app/
-RUN npm install
+COPY . /usr/src/app/
 
 EXPOSE 8081
 
-CMD ["node", "/usr/src/app/details.rb", "8081"]
+CMD ["ruby", "/usr/src/app/details.rb", "8081"]
